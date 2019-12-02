@@ -12,10 +12,70 @@ using System.Threading;
 using System.Threading.Tasks;
 using Microsoft.Win32;
 
+
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+
+
 namespace win_iap_ymodem
 {
     public partial class Form1 : Form
     {
+
+        static UInt32[] crc32_Table = new UInt32[256];
+
+        public static void init_table()
+        {//初始化CRC32表
+            UInt32 i, j;
+            UInt32 crc;
+
+            UInt32 value = 0;
+
+            for (i = 0; i < 256; i++)
+            {
+                crc = i;
+                for (j = 0; j < 8; j++)
+                {
+
+                    value = crc & 1;
+
+                    if (value>0)
+                    {
+                        crc = (crc >> 1) ^ 0xEDB88320;
+                    }
+                    else
+                    {
+                        crc = crc >> 1;
+                    }
+                }
+                crc32_Table[i] = crc;
+            }
+        }
+
+
+        public static uint GetCRC32(byte[] bytes)
+        {//crc32实现函数
+            UInt32 ret = 0xFFFFFFFF;
+
+            UInt32 i;
+
+            init_table();
+
+            uint iCount = (uint)bytes.Length;
+
+            for (i = 0; i < iCount; i++)
+            {
+                ret = crc32_Table[((ret & 0xFF) ^ bytes[i])] ^ (ret >> 8);
+            }
+
+            ret = ~ret;
+
+            return ret;
+        }
+
+
         private bool hasOpenPort = false;
         public bool HasOpenPort
         {
@@ -47,6 +107,8 @@ namespace win_iap_ymodem
         string sendCmd = "";
         int fsLen = 0;
 
+        UInt32 file_crc32_value = 0;
+
         /* packet define */
         const byte C = 67;   // capital letter C
         byte STX = 2;  // Start Of Text
@@ -71,7 +133,7 @@ namespace win_iap_ymodem
             serialPort1.Encoding = Encoding.GetEncoding("gb2312");//串口接收编码GB2312码
             System.Windows.Forms.Control.CheckForIllegalCrossThreadCalls = false;//忽略程序跨越线程运行导致的错误.没有此句将会产生错误
             cbx_Baud.SelectedIndex = 13;
-            cbx_PageSize.SelectedIndex = 4;
+            cbx_PageSize.SelectedIndex = 5;
         }
 
 
@@ -83,7 +145,7 @@ namespace win_iap_ymodem
             btn_Update.Enabled = true;
             btn_Upload.Enabled = true;
             //btn_Erase.Enabled = true;
-            btn_IAPMenu.Enabled = true;
+            btn_run_bootloader.Enabled = true;
             btn_RunApp.Enabled = true;
         }
 
@@ -96,7 +158,7 @@ namespace win_iap_ymodem
             btn_Update.Enabled = false;
             btn_Upload.Enabled = false;
             //btn_Erase.Enabled = false;
-            btn_IAPMenu.Enabled = false;
+            btn_run_bootloader.Enabled = false;
             btn_RunApp.Enabled = false;
 
         }
@@ -142,7 +204,16 @@ namespace win_iap_ymodem
 
             FileStream fileStream = new FileStream(@filePath, FileMode.Open, FileAccess.Read);
             fsLen = (int)fileStream.Length;
-            tbx_show.AppendText("文件大小: " + fsLen.ToString() + "\r\n");
+
+            tbx_show.AppendText("文件大小: " + fsLen.ToString() + " = = 0x" + fsLen.ToString("X") + "\r\n");
+
+            byte[] file_buff = File.ReadAllBytes(@filePath);
+
+            file_crc32_value = GetCRC32(file_buff);
+
+            tbx_show.AppendText("文件CRC32: 0x" + file_crc32_value.ToString("X") + "\r\n");
+
+
         }
 
 
@@ -285,12 +356,14 @@ namespace win_iap_ymodem
 
             progressBar1.Value = 0;
             this.serialPort1.DataReceived -= new System.IO.Ports.SerialDataReceivedEventHandler(this.serialPort1_DataReceived);
-            serialPort1.Write("update\r\n");//发送更新命令
-            serialPort1.ReadTimeout = 1000;
+
+            serialPort1.ReadTimeout = 3000;
             try
             {
                 string rec = serialPort1.ReadTo("C");
+
                 Thread UploadThread = new Thread(updateFileThread);
+
                 UploadThread.Start();
             }
             catch
@@ -358,10 +431,10 @@ namespace win_iap_ymodem
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_Upload_Click(object sender, EventArgs e)
+        private void btn_read_software_version_Click(object sender, EventArgs e)
         {
-            //to do.
-            MessageBox.Show("不好意思，这个功能还没有做。");
+            serialPort1.Write("$set_read_software_version");
+            tbx_show.AppendText("> $set_read_software_version\r\n");
         }
 
 
@@ -370,15 +443,17 @@ namespace win_iap_ymodem
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void btn_IAPMenu_Click(object sender, EventArgs e)
+        private void btn_run_bootloader_Click(object sender, EventArgs e)
         {
-            serialPort1.Write("menu\r\n");
+            serialPort1.Write("$set_run_bootloader");
+            tbx_show.AppendText("> $set_run_bootloader\r\n");
         }
 
 
         private void btn_RunApp_Click(object sender, EventArgs e)
         {
-            serialPort1.Write("runapp\r\n");
+            serialPort1.Write("$set_reset");
+            tbx_show.AppendText("> $set_reset\r\n");
         }
 
         /// <summary>
@@ -419,14 +494,8 @@ namespace win_iap_ymodem
                     case "update":
                         btn_Update_Click(null, null);
                         break;
-                    case "upload":
-                        btn_Upload_Click(null, null);
-                        break;
                     case "erase":
                         btn_Erase_Click(null, null);
-                        break;
-                    case "menu":
-                        btn_IAPMenu_Click(null, null);
                         break;
                     case "runapp":
                         btn_RunApp_Click(null, null);
@@ -670,6 +739,19 @@ namespace win_iap_ymodem
             return true;
         }
 
+        private void cbx_PageSize_SelectedIndexChanged(object sender, EventArgs e)
+        {
 
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void tbx_show_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

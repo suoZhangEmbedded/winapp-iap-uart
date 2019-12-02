@@ -48,7 +48,7 @@
             this.btn_Upload = new System.Windows.Forms.Button();
             this.btn_RunApp = new System.Windows.Forms.Button();
             this.btn_Update = new System.Windows.Forms.Button();
-            this.btn_IAPMenu = new System.Windows.Forms.Button();
+            this.btn_run_bootloader = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cbx_PageSize = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
@@ -208,35 +208,36 @@
             this.tbx_show.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
             this.tbx_show.Size = new System.Drawing.Size(506, 255);
             this.tbx_show.TabIndex = 9;
+            this.tbx_show.TextChanged += new System.EventHandler(this.tbx_show_TextChanged);
             this.tbx_show.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbx_show_KeyPress);
             // 
             // btn_Erase
             // 
-            this.btn_Erase.Location = new System.Drawing.Point(429, 336);
+            this.btn_Erase.Location = new System.Drawing.Point(638, 336);
             this.btn_Erase.Name = "btn_Erase";
-            this.btn_Erase.Size = new System.Drawing.Size(94, 28);
+            this.btn_Erase.Size = new System.Drawing.Size(69, 28);
             this.btn_Erase.TabIndex = 12;
-            this.btn_Erase.Text = "擦除固件Erase";
+            this.btn_Erase.Text = "未用到";
             this.btn_Erase.UseVisualStyleBackColor = true;
             this.btn_Erase.Click += new System.EventHandler(this.btn_Erase_Click);
             // 
             // btn_Upload
             // 
-            this.btn_Upload.Location = new System.Drawing.Point(324, 336);
+            this.btn_Upload.Location = new System.Drawing.Point(230, 336);
             this.btn_Upload.Name = "btn_Upload";
             this.btn_Upload.Size = new System.Drawing.Size(99, 28);
             this.btn_Upload.TabIndex = 13;
-            this.btn_Upload.Text = "读取固件UpLoad";
+            this.btn_Upload.Text = "读取版本号";
             this.btn_Upload.UseVisualStyleBackColor = true;
-            this.btn_Upload.Click += new System.EventHandler(this.btn_Upload_Click);
+            this.btn_Upload.Click += new System.EventHandler(this.btn_read_software_version_Click);
             // 
             // btn_RunApp
             // 
-            this.btn_RunApp.Location = new System.Drawing.Point(631, 336);
+            this.btn_RunApp.Location = new System.Drawing.Point(566, 336);
             this.btn_RunApp.Name = "btn_RunApp";
-            this.btn_RunApp.Size = new System.Drawing.Size(96, 28);
+            this.btn_RunApp.Size = new System.Drawing.Size(66, 28);
             this.btn_RunApp.TabIndex = 14;
-            this.btn_RunApp.Text = "运行App";
+            this.btn_RunApp.Text = "重启设备";
             this.btn_RunApp.UseVisualStyleBackColor = true;
             this.btn_RunApp.Click += new System.EventHandler(this.btn_RunApp_Click);
             // 
@@ -244,23 +245,23 @@
             // 
             this.btn_Update.BackColor = System.Drawing.SystemColors.ControlLight;
             this.btn_Update.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.btn_Update.Location = new System.Drawing.Point(220, 336);
+            this.btn_Update.Location = new System.Drawing.Point(458, 336);
             this.btn_Update.Name = "btn_Update";
             this.btn_Update.Size = new System.Drawing.Size(98, 28);
             this.btn_Update.TabIndex = 15;
-            this.btn_Update.Text = "更新固件UpDate";
+            this.btn_Update.Text = "开始更新固件";
             this.btn_Update.UseVisualStyleBackColor = false;
             this.btn_Update.Click += new System.EventHandler(this.btn_Update_Click);
             // 
-            // btn_IAPMenu
+            // btn_run_bootloader
             // 
-            this.btn_IAPMenu.Location = new System.Drawing.Point(529, 336);
-            this.btn_IAPMenu.Name = "btn_IAPMenu";
-            this.btn_IAPMenu.Size = new System.Drawing.Size(96, 28);
-            this.btn_IAPMenu.TabIndex = 16;
-            this.btn_IAPMenu.Text = "进入IAP菜单";
-            this.btn_IAPMenu.UseVisualStyleBackColor = true;
-            this.btn_IAPMenu.Click += new System.EventHandler(this.btn_IAPMenu_Click);
+            this.btn_run_bootloader.Location = new System.Drawing.Point(335, 336);
+            this.btn_run_bootloader.Name = "btn_run_bootloader";
+            this.btn_run_bootloader.Size = new System.Drawing.Size(117, 28);
+            this.btn_run_bootloader.TabIndex = 16;
+            this.btn_run_bootloader.Text = "进入BootLoader";
+            this.btn_run_bootloader.UseVisualStyleBackColor = true;
+            this.btn_run_bootloader.Click += new System.EventHandler(this.btn_run_bootloader_Click);
             // 
             // groupBox3
             // 
@@ -290,6 +291,7 @@
             this.cbx_PageSize.Name = "cbx_PageSize";
             this.cbx_PageSize.Size = new System.Drawing.Size(98, 20);
             this.cbx_PageSize.TabIndex = 10;
+            this.cbx_PageSize.SelectedIndexChanged += new System.EventHandler(this.cbx_PageSize_SelectedIndexChanged);
             // 
             // label1
             // 
@@ -299,6 +301,7 @@
             this.label1.Size = new System.Drawing.Size(53, 12);
             this.label1.TabIndex = 9;
             this.label1.Text = "包长度：";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // Form1
             // 
@@ -307,7 +310,7 @@
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(743, 416);
             this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.btn_IAPMenu);
+            this.Controls.Add(this.btn_run_bootloader);
             this.Controls.Add(this.btn_RunApp);
             this.Controls.Add(this.btn_Upload);
             this.Controls.Add(this.btn_Erase);
@@ -344,15 +347,15 @@
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button btn_Erase;
-        private System.Windows.Forms.Button btn_Upload;
         private System.Windows.Forms.Button btn_RunApp;
         private System.Windows.Forms.TextBox tbx_show;
         private System.Windows.Forms.Button btn_Update;
         private System.Windows.Forms.Button btn_Clear;
-        private System.Windows.Forms.Button btn_IAPMenu;
+        private System.Windows.Forms.Button btn_run_bootloader;
         private System.Windows.Forms.GroupBox groupBox3;
         private System.Windows.Forms.ComboBox cbx_PageSize;
         private System.Windows.Forms.Label label1;
+        internal System.Windows.Forms.Button btn_Upload;
     }
 }
 
