@@ -369,7 +369,7 @@ namespace win_iap_ymodem
             FileStream file_stream = new FileStream(@filePath, FileMode.Open, FileAccess.Read);
             int file_stream_len = (int)file_stream.Length;
 
-            tbx_show.AppendText("文件大小: " + file_stream_len.ToString() + " = = 0x" + file_stream_len.ToString("X") + "\r\n");
+            tbx_show.AppendText("\r\n\r\n文件大小: " + file_stream_len.ToString() +"字节"+ " = = 0x" + file_stream_len.ToString("X") + "\r\n");
 
             text_file_len.Text = "0x" + file_stream_len.ToString("X");
 
