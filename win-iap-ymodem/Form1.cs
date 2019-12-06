@@ -211,18 +211,15 @@ namespace win_iap_ymodem
             FileStream fileStream = new FileStream(@filePath, FileMode.Open, FileAccess.Read);
             fsLen = (int)fileStream.Length;
 
-            tbx_show.AppendText("文件大小: " + fsLen.ToString() + " = = 0x" + fsLen.ToString("X") + "\r\n");
-
             text_file_len.Text = "0x" + fsLen.ToString("X");
 
             byte[] file_buff = File.ReadAllBytes(@filePath);
 
             file_crc32_value = GetCRC32(file_buff);
 
-            tbx_show.AppendText("文件CRC32: 0x" + file_crc32_value.ToString("X") + "\r\n");
-
             text_file_crc32.Text = "0x" + file_crc32_value.ToString("X");
-          
+            
+            fileStream.Close();
 
         }
 
@@ -367,6 +364,24 @@ namespace win_iap_ymodem
                 MessageBox.Show("请选择有效的bin文件", "提示");
                 return;
             }
+
+
+            FileStream file_stream = new FileStream(@filePath, FileMode.Open, FileAccess.Read);
+            int file_stream_len = (int)file_stream.Length;
+
+            tbx_show.AppendText("文件大小: " + file_stream_len.ToString() + " = = 0x" + file_stream_len.ToString("X") + "\r\n");
+
+            text_file_len.Text = "0x" + file_stream_len.ToString("X");
+
+            byte[] file_buff = File.ReadAllBytes(@filePath);
+
+            file_crc32_value = GetCRC32(file_buff);
+
+            tbx_show.AppendText("文件CRC32: 0x" + file_crc32_value.ToString("X") + "\r\n");
+
+            text_file_crc32.Text = "0x" + file_crc32_value.ToString("X");
+
+            file_stream.Close();
 
             progressBar1.Value = 0;
             textBox_progress_value.Text = "%0";
@@ -641,8 +656,6 @@ namespace win_iap_ymodem
                     }
                 } while (dataSize == fileReadCount);
 
-                tbx_show.AppendText(" > 文件传输完成。\r\n\r\n");
-
                 /* send EOT (tell the downloader we are finished) */
                 serialPort1.Write(new byte[] { EOT }, 0, 1);
                 /* send closing packet */
@@ -651,12 +664,12 @@ namespace win_iap_ymodem
                 data = new byte[dataSize];
                 CRC = new byte[crcSize];
                 if (!sendYmodemClosingPacket(STX, packetNumber, invertedPacketNumber, data, dataSize, CRC, crcSize)) return false;
-                /* get ACK (downloader acknowledge the EOT) */
-                if (serialPort1.ReadByte() != ACK)
-                {
-                    Console.WriteLine("Can't complete the transfer.");
-                    return false;
+                { 
+                
                 }
+
+                tbx_show.AppendText(" > 文件传输完成。\r\n\r\n");
+
             }
             catch (TimeoutException)
             {
@@ -680,8 +693,6 @@ namespace win_iap_ymodem
             {
                 fileStream.Close();
             }
-
-            
 
             Console.WriteLine("File transfer is succesful");
             return true;
