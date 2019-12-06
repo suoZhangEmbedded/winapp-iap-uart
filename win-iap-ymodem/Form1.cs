@@ -166,6 +166,7 @@ namespace win_iap_ymodem
             btn_run_bootloader.Enabled = false;
             btn_RunApp.Enabled = false;
             btn_send.Enabled = false;
+            btn_Erase.Enabled = false;
 
         }
 
