@@ -377,6 +377,8 @@ namespace win_iap_ymodem
             {
                 string rec = serialPort1.ReadTo("C");
 
+                tbx_show.AppendText("\r\n\r\n > 开始传输文件.\r\n");
+
                 Thread UploadThread = new Thread(updateFileThread);
 
                 UploadThread.Start();
@@ -639,7 +641,7 @@ namespace win_iap_ymodem
                     }
                 } while (dataSize == fileReadCount);
 
-                tbx_show.AppendText("\r\n\r\n 文件传输完成。\r\n\r\n");
+                tbx_show.AppendText(" > 文件传输完成。\r\n\r\n");
 
                 /* send EOT (tell the downloader we are finished) */
                 serialPort1.Write(new byte[] { EOT }, 0, 1);
