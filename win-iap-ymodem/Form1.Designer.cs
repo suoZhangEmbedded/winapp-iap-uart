@@ -42,6 +42,8 @@
             this.btn_SelectFile = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.btn_send = new System.Windows.Forms.Button();
+            this.txb_send = new System.Windows.Forms.TextBox();
             this.btn_Clear = new System.Windows.Forms.Button();
             this.tbx_show = new System.Windows.Forms.TextBox();
             this.btn_Erase = new System.Windows.Forms.Button();
@@ -52,8 +54,11 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cbx_PageSize = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.txb_send = new System.Windows.Forms.TextBox();
-            this.btn_send = new System.Windows.Forms.Button();
+            this.text_file_len = new System.Windows.Forms.TextBox();
+            this.text_file_crc32 = new System.Windows.Forms.TextBox();
+            this.label2 = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
+            this.textBox_progress_value = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -85,6 +90,7 @@
             this.progressBar1.Name = "progressBar1";
             this.progressBar1.Size = new System.Drawing.Size(715, 22);
             this.progressBar1.TabIndex = 2;
+            this.progressBar1.Click += new System.EventHandler(this.progressBar1_Click);
             // 
             // serialPort1
             // 
@@ -193,6 +199,26 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "信息视窗";
             // 
+            // btn_send
+            // 
+            this.btn_send.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.btn_send.Location = new System.Drawing.Point(548, 279);
+            this.btn_send.Name = "btn_send";
+            this.btn_send.Size = new System.Drawing.Size(75, 23);
+            this.btn_send.TabIndex = 18;
+            this.btn_send.Text = "发送";
+            this.btn_send.UseVisualStyleBackColor = true;
+            this.btn_send.Click += new System.EventHandler(this.btn_send_Click);
+            // 
+            // txb_send
+            // 
+            this.txb_send.BackColor = System.Drawing.SystemColors.Window;
+            this.txb_send.Location = new System.Drawing.Point(81, 279);
+            this.txb_send.Name = "txb_send";
+            this.txb_send.Size = new System.Drawing.Size(461, 21);
+            this.txb_send.TabIndex = 17;
+            this.txb_send.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
             // btn_Clear
             // 
             this.btn_Clear.Location = new System.Drawing.Point(0, 276);
@@ -269,6 +295,10 @@
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.label3);
+            this.groupBox3.Controls.Add(this.label2);
+            this.groupBox3.Controls.Add(this.text_file_crc32);
+            this.groupBox3.Controls.Add(this.text_file_len);
             this.groupBox3.Controls.Add(this.cbx_PageSize);
             this.groupBox3.Controls.Add(this.label1);
             this.groupBox3.Controls.Add(this.lbl_Pass);
@@ -291,7 +321,7 @@
             "256",
             "512",
             "1024"});
-            this.cbx_PageSize.Location = new System.Drawing.Point(78, 99);
+            this.cbx_PageSize.Location = new System.Drawing.Point(67, 137);
             this.cbx_PageSize.Name = "cbx_PageSize";
             this.cbx_PageSize.Size = new System.Drawing.Size(98, 20);
             this.cbx_PageSize.TabIndex = 10;
@@ -300,32 +330,58 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(19, 102);
+            this.label1.Location = new System.Drawing.Point(19, 140);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(53, 12);
             this.label1.TabIndex = 9;
             this.label1.Text = "包长度：";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
-            // txb_send
+            // text_file_len
             // 
-            this.txb_send.BackColor = System.Drawing.SystemColors.Window;
-            this.txb_send.Location = new System.Drawing.Point(81, 279);
-            this.txb_send.Name = "txb_send";
-            this.txb_send.Size = new System.Drawing.Size(461, 21);
-            this.txb_send.TabIndex = 17;
-            this.txb_send.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            this.text_file_len.BackColor = System.Drawing.SystemColors.Window;
+            this.text_file_len.Location = new System.Drawing.Point(67, 81);
+            this.text_file_len.Name = "text_file_len";
+            this.text_file_len.Size = new System.Drawing.Size(109, 21);
+            this.text_file_len.TabIndex = 18;
             // 
-            // btn_send
+            // text_file_crc32
             // 
-            this.btn_send.ForeColor = System.Drawing.SystemColors.Desktop;
-            this.btn_send.Location = new System.Drawing.Point(548, 279);
-            this.btn_send.Name = "btn_send";
-            this.btn_send.Size = new System.Drawing.Size(75, 23);
-            this.btn_send.TabIndex = 18;
-            this.btn_send.Text = "发送";
-            this.btn_send.UseVisualStyleBackColor = true;
-            this.btn_send.Click += new System.EventHandler(this.btn_send_Click);
+            this.text_file_crc32.BackColor = System.Drawing.SystemColors.Window;
+            this.text_file_crc32.Location = new System.Drawing.Point(67, 108);
+            this.text_file_crc32.Name = "text_file_crc32";
+            this.text_file_crc32.Size = new System.Drawing.Size(109, 21);
+            this.text_file_crc32.TabIndex = 19;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 84);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 12);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "文件长度";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 111);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(59, 12);
+            this.label3.TabIndex = 21;
+            this.label3.Text = "文件crc32";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // textBox_progress_value
+            // 
+            this.textBox_progress_value.BackColor = System.Drawing.SystemColors.Window;
+            this.textBox_progress_value.Location = new System.Drawing.Point(733, 381);
+            this.textBox_progress_value.Name = "textBox_progress_value";
+            this.textBox_progress_value.Size = new System.Drawing.Size(56, 21);
+            this.textBox_progress_value.TabIndex = 20;
+            this.textBox_progress_value.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.textBox_progress_value.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
             // Form1
             // 
@@ -333,6 +389,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
             this.ClientSize = new System.Drawing.Size(923, 416);
+            this.Controls.Add(this.textBox_progress_value);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btn_run_bootloader);
             this.Controls.Add(this.btn_RunApp);
@@ -353,6 +410,7 @@
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -383,6 +441,11 @@
         internal System.Windows.Forms.Button btn_Upload;
         private System.Windows.Forms.Button btn_send;
         private System.Windows.Forms.TextBox txb_send;
+        private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Label label2;
+        private System.Windows.Forms.TextBox text_file_crc32;
+        private System.Windows.Forms.TextBox text_file_len;
+        private System.Windows.Forms.TextBox textBox_progress_value;
     }
 }
 

@@ -136,6 +136,7 @@ namespace win_iap_ymodem
             cbx_PageSize.SelectedIndex = 5;
 
             tbx_show.AppendText("注意：打开串口和打开升级文件后，按钮才可使用。\r\n");
+            textBox_progress_value.Text = "%0";
 
         }
 
@@ -212,12 +213,16 @@ namespace win_iap_ymodem
 
             tbx_show.AppendText("文件大小: " + fsLen.ToString() + " = = 0x" + fsLen.ToString("X") + "\r\n");
 
+            text_file_crc32.Text = "0x" + fsLen.ToString("X");
+
             byte[] file_buff = File.ReadAllBytes(@filePath);
 
             file_crc32_value = GetCRC32(file_buff);
 
             tbx_show.AppendText("文件CRC32: 0x" + file_crc32_value.ToString("X") + "\r\n");
 
+            text_file_crc32.Text = "0x" + file_crc32_value.ToString("X");
+          
 
         }
 
@@ -353,6 +358,7 @@ namespace win_iap_ymodem
         /// <param name="e"></param>
         private void btn_Update_Click(object sender, EventArgs e)
         {
+
             if ( !File.Exists(@txb_FilePath.Text) || (Path.GetExtension(@txb_FilePath.Text) != ".bin"))
             {
                 MessageBox.Show("请选择有效的bin文件", "提示");
@@ -360,6 +366,7 @@ namespace win_iap_ymodem
             }
 
             progressBar1.Value = 0;
+            textBox_progress_value.Text = "%0";
             this.serialPort1.DataReceived -= new System.IO.Ports.SerialDataReceivedEventHandler(this.serialPort1_DataReceived);
 
             serialPort1.ReadTimeout = 3000;
@@ -582,7 +589,7 @@ namespace win_iap_ymodem
 
                 if (serialPort1.ReadByte() != ACK)
                 {
-                    Console.WriteLine("Can't send the initial packet.");
+                    Console.WriteLine("first ymodem data, no rx ack.");
                     return false;
                 }
 
@@ -616,10 +623,15 @@ namespace win_iap_ymodem
                     /* send the packet */
                     if (!sendYmodemPacket(STX, packetNumber, invertedPacketNumber, data, dataSize, CRC, crcSize)) return false;
                     progressBar1.Value = ++proprassVal;
+
+                    int percentage_value = progressBar1.Value / progressBar1.Maximum;
+
+                    textBox_progress_value.Text = "%" + "percentage_value.ToString";
+
                     /* wait for ACK */
                     if (serialPort1.ReadByte() != ACK)
                     {
-                        Console.WriteLine("Couldn't send a packet.");
+                        Console.WriteLine("no rx ACK, Couldn't send a packet.");
                         return false;
                     }
                 } while (dataSize == fileReadCount);
@@ -642,16 +654,19 @@ namespace win_iap_ymodem
             catch (TimeoutException)
             {
                 progressBar1.Value = 0;
+                textBox_progress_value.Text = "%0";
                 MessageBox.Show("数据传输超时");
             }
             catch (InvalidOperationException)
             {
                 progressBar1.Value = 0;
+                textBox_progress_value.Text = "%0";
                 MessageBox.Show("端口打开失败");
             }
             catch (IOException)
             {
                 progressBar1.Value = 0;
+                textBox_progress_value.Text = "%0";
                 MessageBox.Show("端口被中断，请检查连接");
             }
             finally
@@ -773,6 +788,31 @@ namespace win_iap_ymodem
             }
             else
                 MessageBox.Show("数据无效，无法发送");
+
+        }
+
+        private void label3_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label2_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void progressBar1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox1_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void timer_progress_Tick(object sender, EventArgs e)
+        {
 
         }
     }
