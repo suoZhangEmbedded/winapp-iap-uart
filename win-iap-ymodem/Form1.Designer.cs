@@ -52,12 +52,12 @@
             this.btn_Update = new System.Windows.Forms.Button();
             this.btn_run_bootloader = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.label3 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
+            this.text_file_crc32 = new System.Windows.Forms.TextBox();
+            this.text_file_len = new System.Windows.Forms.TextBox();
             this.cbx_PageSize = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.text_file_len = new System.Windows.Forms.TextBox();
-            this.text_file_crc32 = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.textBox_progress_value = new System.Windows.Forms.TextBox();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
@@ -311,6 +311,42 @@
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "文件设置";
             // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Location = new System.Drawing.Point(6, 111);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(59, 12);
+            this.label3.TabIndex = 21;
+            this.label3.Text = "文件crc32";
+            this.label3.Click += new System.EventHandler(this.label3_Click);
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Location = new System.Drawing.Point(12, 84);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(53, 12);
+            this.label2.TabIndex = 20;
+            this.label2.Text = "文件长度";
+            this.label2.Click += new System.EventHandler(this.label2_Click);
+            // 
+            // text_file_crc32
+            // 
+            this.text_file_crc32.BackColor = System.Drawing.SystemColors.Window;
+            this.text_file_crc32.Location = new System.Drawing.Point(67, 108);
+            this.text_file_crc32.Name = "text_file_crc32";
+            this.text_file_crc32.Size = new System.Drawing.Size(109, 21);
+            this.text_file_crc32.TabIndex = 19;
+            // 
+            // text_file_len
+            // 
+            this.text_file_len.BackColor = System.Drawing.SystemColors.Window;
+            this.text_file_len.Location = new System.Drawing.Point(67, 81);
+            this.text_file_len.Name = "text_file_len";
+            this.text_file_len.Size = new System.Drawing.Size(109, 21);
+            this.text_file_len.TabIndex = 18;
+            // 
             // cbx_PageSize
             // 
             this.cbx_PageSize.FormattingEnabled = true;
@@ -336,42 +372,6 @@
             this.label1.TabIndex = 9;
             this.label1.Text = "包长度：";
             this.label1.Click += new System.EventHandler(this.label1_Click);
-            // 
-            // text_file_len
-            // 
-            this.text_file_len.BackColor = System.Drawing.SystemColors.Window;
-            this.text_file_len.Location = new System.Drawing.Point(67, 81);
-            this.text_file_len.Name = "text_file_len";
-            this.text_file_len.Size = new System.Drawing.Size(109, 21);
-            this.text_file_len.TabIndex = 18;
-            // 
-            // text_file_crc32
-            // 
-            this.text_file_crc32.BackColor = System.Drawing.SystemColors.Window;
-            this.text_file_crc32.Location = new System.Drawing.Point(67, 108);
-            this.text_file_crc32.Name = "text_file_crc32";
-            this.text_file_crc32.Size = new System.Drawing.Size(109, 21);
-            this.text_file_crc32.TabIndex = 19;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(12, 84);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(53, 12);
-            this.label2.TabIndex = 20;
-            this.label2.Text = "文件长度";
-            this.label2.Click += new System.EventHandler(this.label2_Click);
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(6, 111);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(59, 12);
-            this.label3.TabIndex = 21;
-            this.label3.Text = "文件crc32";
-            this.label3.Click += new System.EventHandler(this.label3_Click);
             // 
             // textBox_progress_value
             // 

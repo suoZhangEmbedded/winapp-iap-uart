@@ -213,7 +213,7 @@ namespace win_iap_ymodem
 
             tbx_show.AppendText("文件大小: " + fsLen.ToString() + " = = 0x" + fsLen.ToString("X") + "\r\n");
 
-            text_file_crc32.Text = "0x" + fsLen.ToString("X");
+            text_file_len.Text = "0x" + fsLen.ToString("X");
 
             byte[] file_buff = File.ReadAllBytes(@filePath);
 
@@ -347,7 +347,10 @@ namespace win_iap_ymodem
         /// </summary>
         private void updateFileThread()
         {
+
+
             YmodemUpdateFile(txb_FilePath.Text);
+
         }
 
 
@@ -624,9 +627,9 @@ namespace win_iap_ymodem
                     if (!sendYmodemPacket(STX, packetNumber, invertedPacketNumber, data, dataSize, CRC, crcSize)) return false;
                     progressBar1.Value = ++proprassVal;
 
-                    int percentage_value = progressBar1.Value / progressBar1.Maximum;
+                    int percentage_value = (100*progressBar1.Value) / progressBar1.Maximum;
 
-                    textBox_progress_value.Text = "%" + "percentage_value.ToString";
+                    textBox_progress_value.Text = "%" + percentage_value.ToString("D");
 
                     /* wait for ACK */
                     if (serialPort1.ReadByte() != ACK)
@@ -635,6 +638,8 @@ namespace win_iap_ymodem
                         return false;
                     }
                 } while (dataSize == fileReadCount);
+
+                tbx_show.AppendText("\r\n\r\n 文件传输完成。\r\n\r\n");
 
                 /* send EOT (tell the downloader we are finished) */
                 serialPort1.Write(new byte[] { EOT }, 0, 1);
@@ -673,6 +678,8 @@ namespace win_iap_ymodem
             {
                 fileStream.Close();
             }
+
+            
 
             Console.WriteLine("File transfer is succesful");
             return true;
@@ -812,6 +819,11 @@ namespace win_iap_ymodem
         }
 
         private void timer_progress_Tick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
         {
 
         }
