@@ -134,6 +134,9 @@ namespace win_iap_ymodem
             System.Windows.Forms.Control.CheckForIllegalCrossThreadCalls = false;//忽略程序跨越线程运行导致的错误.没有此句将会产生错误
             cbx_Baud.SelectedIndex = 13;
             cbx_PageSize.SelectedIndex = 5;
+
+            tbx_show.AppendText("注意：打开串口和打开升级文件后，按钮才可使用。\r\n");
+
         }
 
 
@@ -147,6 +150,7 @@ namespace win_iap_ymodem
             //btn_Erase.Enabled = true;
             btn_run_bootloader.Enabled = true;
             btn_RunApp.Enabled = true;
+            btn_send.Enabled = true;
         }
 
 
@@ -160,6 +164,7 @@ namespace win_iap_ymodem
             //btn_Erase.Enabled = false;
             btn_run_bootloader.Enabled = false;
             btn_RunApp.Enabled = false;
+            btn_send.Enabled = false;
 
         }
 
@@ -751,6 +756,23 @@ namespace win_iap_ymodem
 
         private void tbx_show_TextChanged(object sender, EventArgs e)
         {
+
+        }
+
+        private void textBox1_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btn_send_Click(object sender, EventArgs e)
+        {
+            if (txb_send.Text.Length > 0)
+            {
+                serialPort1.Write(txb_send.Text);
+                tbx_show.AppendText(">"+ txb_send.Text+"\r\n");
+            }
+            else
+                MessageBox.Show("数据无效，无法发送");
 
         }
     }

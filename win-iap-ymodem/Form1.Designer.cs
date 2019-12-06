@@ -52,6 +52,8 @@
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.cbx_PageSize = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
+            this.txb_send = new System.Windows.Forms.TextBox();
+            this.btn_send = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -180,11 +182,13 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(this.btn_send);
+            this.groupBox2.Controls.Add(this.txb_send);
             this.groupBox2.Controls.Add(this.btn_Clear);
             this.groupBox2.Controls.Add(this.tbx_show);
             this.groupBox2.Location = new System.Drawing.Point(220, 12);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(507, 306);
+            this.groupBox2.Size = new System.Drawing.Size(689, 306);
             this.groupBox2.TabIndex = 11;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "信息视窗";
@@ -206,7 +210,7 @@
             this.tbx_show.Multiline = true;
             this.tbx_show.Name = "tbx_show";
             this.tbx_show.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.tbx_show.Size = new System.Drawing.Size(506, 255);
+            this.tbx_show.Size = new System.Drawing.Size(690, 255);
             this.tbx_show.TabIndex = 9;
             this.tbx_show.TextChanged += new System.EventHandler(this.tbx_show_TextChanged);
             this.tbx_show.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbx_show_KeyPress);
@@ -303,12 +307,32 @@
             this.label1.Text = "包长度：";
             this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
+            // txb_send
+            // 
+            this.txb_send.BackColor = System.Drawing.SystemColors.Window;
+            this.txb_send.Location = new System.Drawing.Point(81, 279);
+            this.txb_send.Name = "txb_send";
+            this.txb_send.Size = new System.Drawing.Size(461, 21);
+            this.txb_send.TabIndex = 17;
+            this.txb_send.TextChanged += new System.EventHandler(this.textBox1_TextChanged);
+            // 
+            // btn_send
+            // 
+            this.btn_send.ForeColor = System.Drawing.SystemColors.Desktop;
+            this.btn_send.Location = new System.Drawing.Point(548, 279);
+            this.btn_send.Name = "btn_send";
+            this.btn_send.Size = new System.Drawing.Size(75, 23);
+            this.btn_send.TabIndex = 18;
+            this.btn_send.Text = "发送";
+            this.btn_send.UseVisualStyleBackColor = true;
+            this.btn_send.Click += new System.EventHandler(this.btn_send_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(743, 416);
+            this.ClientSize = new System.Drawing.Size(923, 416);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btn_run_bootloader);
             this.Controls.Add(this.btn_RunApp);
@@ -318,6 +342,7 @@
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.progressBar1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
             this.Text = "STM32-IAP上位机操作工具";
             this.Load += new System.EventHandler(this.Form1_Load);
@@ -356,6 +381,8 @@
         private System.Windows.Forms.ComboBox cbx_PageSize;
         private System.Windows.Forms.Label label1;
         internal System.Windows.Forms.Button btn_Upload;
+        private System.Windows.Forms.Button btn_send;
+        private System.Windows.Forms.TextBox txb_send;
     }
 }
 

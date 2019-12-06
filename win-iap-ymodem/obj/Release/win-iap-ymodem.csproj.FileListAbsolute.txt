@@ -1,0 +1,8 @@
+C:\Users\suozhang\Desktop\winapp-iap-uart\win-iap-ymodem\bin\Release\win-iap-ymodem.exe
+C:\Users\suozhang\Desktop\winapp-iap-uart\win-iap-ymodem\bin\Release\win-iap-ymodem.pdb
+C:\Users\suozhang\Desktop\winapp-iap-uart\win-iap-ymodem\obj\Release\win-iap-ymodem.csprojAssemblyReference.cache
+C:\Users\suozhang\Desktop\winapp-iap-uart\win-iap-ymodem\obj\Release\win_iap_ymodem.Form1.resources
+C:\Users\suozhang\Desktop\winapp-iap-uart\win-iap-ymodem\obj\Release\win_iap_ymodem.Properties.Resources.resources
+C:\Users\suozhang\Desktop\winapp-iap-uart\win-iap-ymodem\obj\Release\win-iap-ymodem.csproj.GenerateResource.cache
+C:\Users\suozhang\Desktop\winapp-iap-uart\win-iap-ymodem\obj\Release\win-iap-ymodem.exe
+C:\Users\suozhang\Desktop\winapp-iap-uart\win-iap-ymodem\obj\Release\win-iap-ymodem.pdb
