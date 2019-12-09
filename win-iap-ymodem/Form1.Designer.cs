@@ -350,13 +350,7 @@
             // cbx_PageSize
             // 
             this.cbx_PageSize.FormattingEnabled = true;
-            this.cbx_PageSize.Items.AddRange(new object[] {
-            "32",
-            "64",
-            "128",
-            "256",
-            "512",
-            "1024"});
+            this.cbx_PageSize.Items.AddRange(new object[] {"1024"});
             this.cbx_PageSize.Location = new System.Drawing.Point(67, 137);
             this.cbx_PageSize.Name = "cbx_PageSize";
             this.cbx_PageSize.Size = new System.Drawing.Size(98, 20);

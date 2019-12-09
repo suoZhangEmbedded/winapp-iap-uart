@@ -133,7 +133,7 @@ namespace win_iap_ymodem
             serialPort1.Encoding = Encoding.GetEncoding("gb2312");//串口接收编码GB2312码
             System.Windows.Forms.Control.CheckForIllegalCrossThreadCalls = false;//忽略程序跨越线程运行导致的错误.没有此句将会产生错误
             cbx_Baud.SelectedIndex = 13;
-            cbx_PageSize.SelectedIndex = 5;
+            cbx_PageSize.SelectedIndex = 0;
 
             tbx_show.AppendText("注意：打开串口和打开升级文件后，按钮才可使用。\r\n");
             textBox_progress_value.Text = "%0";
@@ -585,10 +585,8 @@ namespace win_iap_ymodem
             const byte ACK = 6;  // Positive ACknowledgement
             const int crcSize = 2;
 
-            //byte HEAD = 0;
-            // int dataSize = 1024;
-            int dataSize = Convert.ToInt32(cbx_PageSize.Text);
-            STX = getPageHead(cbx_PageSize.Text);
+            int dataSize = 1024;
+            STX = 0xA8;
 
             /* header: 3 bytes */
             int proprassVal = 0;
