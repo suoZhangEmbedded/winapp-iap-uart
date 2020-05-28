@@ -436,7 +436,7 @@
             // up_threshold_1
             // 
             this.up_threshold_1.BackColor = System.Drawing.SystemColors.Window;
-            this.up_threshold_1.Location = new System.Drawing.Point(994, 133);
+            this.up_threshold_1.Location = new System.Drawing.Point(1062, 133);
             this.up_threshold_1.Name = "up_threshold_1";
             this.up_threshold_1.Size = new System.Drawing.Size(51, 21);
             this.up_threshold_1.TabIndex = 21;
@@ -455,7 +455,7 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(992, 112);
+            this.label5.Location = new System.Drawing.Point(1060, 112);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(53, 12);
             this.label5.TabIndex = 23;
@@ -465,7 +465,7 @@
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(1058, 112);
+            this.label6.Location = new System.Drawing.Point(992, 112);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(53, 12);
             this.label6.TabIndex = 25;
@@ -475,7 +475,7 @@
             // down_threshold_1
             // 
             this.down_threshold_1.BackColor = System.Drawing.SystemColors.Window;
-            this.down_threshold_1.Location = new System.Drawing.Point(1060, 133);
+            this.down_threshold_1.Location = new System.Drawing.Point(994, 133);
             this.down_threshold_1.Name = "down_threshold_1";
             this.down_threshold_1.Size = new System.Drawing.Size(51, 21);
             this.down_threshold_1.TabIndex = 24;
@@ -513,7 +513,7 @@
             // temper_state_1
             // 
             this.temper_state_1.BackColor = System.Drawing.SystemColors.Window;
-            this.temper_state_1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.temper_state_1.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.temper_state_1.Location = new System.Drawing.Point(1197, 133);
             this.temper_state_1.Name = "temper_state_1";
             this.temper_state_1.Size = new System.Drawing.Size(51, 21);
@@ -524,7 +524,7 @@
             // temper_state_2
             // 
             this.temper_state_2.BackColor = System.Drawing.SystemColors.Window;
-            this.temper_state_2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.temper_state_2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.temper_state_2.Location = new System.Drawing.Point(1197, 160);
             this.temper_state_2.Name = "temper_state_2";
             this.temper_state_2.Size = new System.Drawing.Size(51, 21);
@@ -543,7 +543,7 @@
             // down_threshold_2
             // 
             this.down_threshold_2.BackColor = System.Drawing.SystemColors.Window;
-            this.down_threshold_2.Location = new System.Drawing.Point(1060, 160);
+            this.down_threshold_2.Location = new System.Drawing.Point(994, 160);
             this.down_threshold_2.Name = "down_threshold_2";
             this.down_threshold_2.Size = new System.Drawing.Size(51, 21);
             this.down_threshold_2.TabIndex = 32;
@@ -562,7 +562,7 @@
             // up_threshold_2
             // 
             this.up_threshold_2.BackColor = System.Drawing.SystemColors.Window;
-            this.up_threshold_2.Location = new System.Drawing.Point(994, 160);
+            this.up_threshold_2.Location = new System.Drawing.Point(1062, 160);
             this.up_threshold_2.Name = "up_threshold_2";
             this.up_threshold_2.Size = new System.Drawing.Size(51, 21);
             this.up_threshold_2.TabIndex = 30;
@@ -571,7 +571,7 @@
             // temper_state_3
             // 
             this.temper_state_3.BackColor = System.Drawing.SystemColors.Window;
-            this.temper_state_3.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.temper_state_3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.temper_state_3.Location = new System.Drawing.Point(1197, 187);
             this.temper_state_3.Name = "temper_state_3";
             this.temper_state_3.Size = new System.Drawing.Size(51, 21);
@@ -590,7 +590,7 @@
             // down_threshold_3
             // 
             this.down_threshold_3.BackColor = System.Drawing.SystemColors.Window;
-            this.down_threshold_3.Location = new System.Drawing.Point(1060, 187);
+            this.down_threshold_3.Location = new System.Drawing.Point(994, 187);
             this.down_threshold_3.Name = "down_threshold_3";
             this.down_threshold_3.Size = new System.Drawing.Size(51, 21);
             this.down_threshold_3.TabIndex = 37;
@@ -608,7 +608,7 @@
             // up_threshold_3
             // 
             this.up_threshold_3.BackColor = System.Drawing.SystemColors.Window;
-            this.up_threshold_3.Location = new System.Drawing.Point(994, 187);
+            this.up_threshold_3.Location = new System.Drawing.Point(1062, 187);
             this.up_threshold_3.Name = "up_threshold_3";
             this.up_threshold_3.Size = new System.Drawing.Size(51, 21);
             this.up_threshold_3.TabIndex = 35;
@@ -617,7 +617,7 @@
             // temper_state_4
             // 
             this.temper_state_4.BackColor = System.Drawing.SystemColors.Window;
-            this.temper_state_4.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.temper_state_4.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.temper_state_4.Location = new System.Drawing.Point(1197, 214);
             this.temper_state_4.Name = "temper_state_4";
             this.temper_state_4.Size = new System.Drawing.Size(51, 21);
@@ -636,7 +636,7 @@
             // down_threshold_4
             // 
             this.down_threshold_4.BackColor = System.Drawing.SystemColors.Window;
-            this.down_threshold_4.Location = new System.Drawing.Point(1060, 214);
+            this.down_threshold_4.Location = new System.Drawing.Point(994, 214);
             this.down_threshold_4.Name = "down_threshold_4";
             this.down_threshold_4.Size = new System.Drawing.Size(51, 21);
             this.down_threshold_4.TabIndex = 42;
@@ -654,7 +654,7 @@
             // up_threshold_4
             // 
             this.up_threshold_4.BackColor = System.Drawing.SystemColors.Window;
-            this.up_threshold_4.Location = new System.Drawing.Point(994, 214);
+            this.up_threshold_4.Location = new System.Drawing.Point(1062, 214);
             this.up_threshold_4.Name = "up_threshold_4";
             this.up_threshold_4.Size = new System.Drawing.Size(51, 21);
             this.up_threshold_4.TabIndex = 40;
@@ -663,7 +663,7 @@
             // temper_state_5
             // 
             this.temper_state_5.BackColor = System.Drawing.SystemColors.Window;
-            this.temper_state_5.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.temper_state_5.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.temper_state_5.Location = new System.Drawing.Point(1197, 241);
             this.temper_state_5.Name = "temper_state_5";
             this.temper_state_5.Size = new System.Drawing.Size(51, 21);
@@ -682,7 +682,7 @@
             // down_threshold_5
             // 
             this.down_threshold_5.BackColor = System.Drawing.SystemColors.Window;
-            this.down_threshold_5.Location = new System.Drawing.Point(1060, 241);
+            this.down_threshold_5.Location = new System.Drawing.Point(994, 241);
             this.down_threshold_5.Name = "down_threshold_5";
             this.down_threshold_5.Size = new System.Drawing.Size(51, 21);
             this.down_threshold_5.TabIndex = 47;
@@ -700,7 +700,7 @@
             // up_threshold_5
             // 
             this.up_threshold_5.BackColor = System.Drawing.SystemColors.Window;
-            this.up_threshold_5.Location = new System.Drawing.Point(994, 241);
+            this.up_threshold_5.Location = new System.Drawing.Point(1062, 241);
             this.up_threshold_5.Name = "up_threshold_5";
             this.up_threshold_5.Size = new System.Drawing.Size(51, 21);
             this.up_threshold_5.TabIndex = 45;
@@ -709,12 +709,13 @@
             // temper_state_6
             // 
             this.temper_state_6.BackColor = System.Drawing.SystemColors.Window;
-            this.temper_state_6.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.temper_state_6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.temper_state_6.Location = new System.Drawing.Point(1197, 268);
             this.temper_state_6.Name = "temper_state_6";
             this.temper_state_6.Size = new System.Drawing.Size(51, 21);
             this.temper_state_6.TabIndex = 54;
             this.temper_state_6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.temper_state_6.TextChanged += new System.EventHandler(this.temper_state_6_TextChanged);
             // 
             // switch_state_6
             // 
@@ -728,7 +729,7 @@
             // down_threshold_6
             // 
             this.down_threshold_6.BackColor = System.Drawing.SystemColors.Window;
-            this.down_threshold_6.Location = new System.Drawing.Point(1060, 268);
+            this.down_threshold_6.Location = new System.Drawing.Point(994, 268);
             this.down_threshold_6.Name = "down_threshold_6";
             this.down_threshold_6.Size = new System.Drawing.Size(51, 21);
             this.down_threshold_6.TabIndex = 52;
@@ -746,7 +747,7 @@
             // up_threshold_6
             // 
             this.up_threshold_6.BackColor = System.Drawing.SystemColors.Window;
-            this.up_threshold_6.Location = new System.Drawing.Point(994, 268);
+            this.up_threshold_6.Location = new System.Drawing.Point(1062, 268);
             this.up_threshold_6.Name = "up_threshold_6";
             this.up_threshold_6.Size = new System.Drawing.Size(51, 21);
             this.up_threshold_6.TabIndex = 50;
@@ -755,7 +756,7 @@
             // temper_state_7
             // 
             this.temper_state_7.BackColor = System.Drawing.SystemColors.Window;
-            this.temper_state_7.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.temper_state_7.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.temper_state_7.Location = new System.Drawing.Point(1197, 295);
             this.temper_state_7.Name = "temper_state_7";
             this.temper_state_7.Size = new System.Drawing.Size(51, 21);
@@ -774,7 +775,7 @@
             // down_threshold_7
             // 
             this.down_threshold_7.BackColor = System.Drawing.SystemColors.Window;
-            this.down_threshold_7.Location = new System.Drawing.Point(1060, 295);
+            this.down_threshold_7.Location = new System.Drawing.Point(994, 295);
             this.down_threshold_7.Name = "down_threshold_7";
             this.down_threshold_7.Size = new System.Drawing.Size(51, 21);
             this.down_threshold_7.TabIndex = 57;
@@ -792,7 +793,7 @@
             // up_threshold_7
             // 
             this.up_threshold_7.BackColor = System.Drawing.SystemColors.Window;
-            this.up_threshold_7.Location = new System.Drawing.Point(994, 295);
+            this.up_threshold_7.Location = new System.Drawing.Point(1062, 295);
             this.up_threshold_7.Name = "up_threshold_7";
             this.up_threshold_7.Size = new System.Drawing.Size(51, 21);
             this.up_threshold_7.TabIndex = 55;
@@ -801,7 +802,7 @@
             // temper_state_8
             // 
             this.temper_state_8.BackColor = System.Drawing.SystemColors.Window;
-            this.temper_state_8.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.temper_state_8.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.temper_state_8.Location = new System.Drawing.Point(1197, 322);
             this.temper_state_8.Name = "temper_state_8";
             this.temper_state_8.Size = new System.Drawing.Size(51, 21);
@@ -820,7 +821,7 @@
             // down_threshold_8
             // 
             this.down_threshold_8.BackColor = System.Drawing.SystemColors.Window;
-            this.down_threshold_8.Location = new System.Drawing.Point(1060, 322);
+            this.down_threshold_8.Location = new System.Drawing.Point(994, 322);
             this.down_threshold_8.Name = "down_threshold_8";
             this.down_threshold_8.Size = new System.Drawing.Size(51, 21);
             this.down_threshold_8.TabIndex = 62;
@@ -838,7 +839,7 @@
             // up_threshold_8
             // 
             this.up_threshold_8.BackColor = System.Drawing.SystemColors.Window;
-            this.up_threshold_8.Location = new System.Drawing.Point(994, 322);
+            this.up_threshold_8.Location = new System.Drawing.Point(1062, 322);
             this.up_threshold_8.Name = "up_threshold_8";
             this.up_threshold_8.Size = new System.Drawing.Size(51, 21);
             this.up_threshold_8.TabIndex = 60;
@@ -885,7 +886,7 @@
             // label17
             // 
             this.label17.AutoSize = true;
-            this.label17.Location = new System.Drawing.Point(1039, 49);
+            this.label17.Location = new System.Drawing.Point(1094, 49);
             this.label17.Name = "label17";
             this.label17.Size = new System.Drawing.Size(53, 12);
             this.label17.TabIndex = 69;
@@ -895,16 +896,17 @@
             // label18
             // 
             this.label18.AutoSize = true;
-            this.label18.Location = new System.Drawing.Point(1096, 49);
+            this.label18.Location = new System.Drawing.Point(1039, 49);
             this.label18.Name = "label18";
             this.label18.Size = new System.Drawing.Size(53, 12);
             this.label18.TabIndex = 71;
             this.label18.Text = "下限阈值";
+            this.label18.Click += new System.EventHandler(this.label18_Click);
             // 
             // up_threshold
             // 
             this.up_threshold.BackColor = System.Drawing.SystemColors.Window;
-            this.up_threshold.Location = new System.Drawing.Point(1041, 70);
+            this.up_threshold.Location = new System.Drawing.Point(1098, 70);
             this.up_threshold.Name = "up_threshold";
             this.up_threshold.Size = new System.Drawing.Size(51, 21);
             this.up_threshold.TabIndex = 72;
@@ -913,7 +915,7 @@
             // down_threshold
             // 
             this.down_threshold.BackColor = System.Drawing.SystemColors.Window;
-            this.down_threshold.Location = new System.Drawing.Point(1098, 70);
+            this.down_threshold.Location = new System.Drawing.Point(1041, 70);
             this.down_threshold.Name = "down_threshold";
             this.down_threshold.Size = new System.Drawing.Size(51, 21);
             this.down_threshold.TabIndex = 73;
@@ -934,7 +936,7 @@
             this.switch_state.FormattingEnabled = true;
             this.switch_state.Items.AddRange(new object[] {
             "开",
-            "关",});
+            "关"});
             this.switch_state.Location = new System.Drawing.Point(1155, 71);
             this.switch_state.Name = "switch_state";
             this.switch_state.Size = new System.Drawing.Size(51, 20);
@@ -966,7 +968,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(1306, 416);
+            this.ClientSize = new System.Drawing.Size(1306, 509);
             this.Controls.Add(this.label20);
             this.Controls.Add(this.set);
             this.Controls.Add(this.label19);

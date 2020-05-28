@@ -140,6 +140,11 @@ namespace win_iap_ymodem
             switch_state.SelectedIndex = 0;
 
             tbx_show.AppendText("注意：打开串口和打开升级文件后，相关按钮才可使用。\r\n");
+
+            // 上下 阈值 默认设置
+            up_threshold.AppendText( "120" );
+            down_threshold.AppendText("-40");
+
             textBox_progress_value.Text = "%0";
 
         }
@@ -259,6 +264,8 @@ namespace win_iap_ymodem
                 {
                     serialPort1.Close();
                     btn_Port.Text = "打开";
+                    set.Enabled = false;
+                    query_config.Enabled = false;
                     HasOpenPort = false;
                 }
                 catch (Exception ex)
@@ -279,6 +286,8 @@ namespace win_iap_ymodem
                     serialPort1.Open();
                     btn_Port.Text = "关闭";
                     HasOpenPort = true;
+                    set.Enabled = true;
+                    query_config.Enabled = true;
                 }
                 catch (Exception ex)
                 {
@@ -328,17 +337,254 @@ namespace win_iap_ymodem
         }
 
 
+
+        void byte_printf_hex(byte[] buf, Int32 len)
+        {
+            Int32 i = 0;
+
+            tbx_show.AppendText(">");
+
+            for (i = 0; i < len; i++)
+            {
+                tbx_show.AppendText("0x" + buf[i].ToString("X") + " ");
+            }
+
+            tbx_show.AppendText("\r\n");
+
+        }
+
+        void config_printf(byte[] byteArray)
+        {
+
+            // 0xAA 0x55
+            // 0xF0 代表 设置 或者 查询应答
+
+            // 1个字节 开关状态
+            // 2个字节 上限阈值
+            // 2个字节 下限阈值
+            // 2个字节 实时温度值
+
+            // 多通道
+
+            // 0D 0A
+
+            if (byteArray[3] == 0)
+                switch_state_1.Text = "关";
+            else
+                switch_state_1.Text = "开";
+
+            int up_threshold_1_value = byteArray[5] * 256 + byteArray[4];
+            int down_threshold_1_value = byteArray[7] * 256 + byteArray[6];
+            int real_temper_1_value = byteArray[9] * 256 + byteArray[8];
+
+            Int16 value = (Int16)up_threshold_1_value;
+            up_threshold_1.Text = (value.ToString() + "℃");
+            value = (Int16)down_threshold_1_value;
+            down_threshold_1.Text = (value.ToString() + "℃");
+            value = (Int16)real_temper_1_value;
+            if(real_temper_1_value < 1000 )
+                temper_state_1.Text = (value.ToString() + "℃");
+            else
+                temper_state_1.Text = ("未接入");
+
+
+            if (byteArray[10] == 0)
+                switch_state_2.Text = "关";
+            else
+                switch_state_2.Text = "开";
+
+            int up_threshold_2_value = byteArray[12] * 256 + byteArray[11];
+            int down_threshold_2_value = byteArray[14] * 256 + byteArray[13];
+            int real_temper_2_value = byteArray[16] * 256 + byteArray[15];
+
+            value = (Int16)up_threshold_2_value;
+            up_threshold_2.Text = (value.ToString() + "℃");
+            value = (Int16)down_threshold_2_value;
+            down_threshold_2.Text = (value.ToString() + "℃");
+            value = (Int16)real_temper_2_value;
+            if (real_temper_2_value < 1000)
+                temper_state_2.Text = (value.ToString() + "℃");
+            else
+                temper_state_2.Text = ("未接入");
+
+
+            if (byteArray[17] == 0)
+                switch_state_3.Text = "关";
+            else
+                switch_state_3.Text = "开";
+
+            int up_threshold_3_value = byteArray[19] * 256 + byteArray[18];
+            int down_threshold_3_value = byteArray[21] * 256 + byteArray[20];
+            int real_temper_3_value = byteArray[23] * 256 + byteArray[22];
+
+            value = (Int16)up_threshold_3_value;
+            up_threshold_3.Text = (value.ToString() + "℃");
+            value = (Int16)down_threshold_3_value;
+            down_threshold_3.Text = (value.ToString() + "℃");
+            value = (Int16)real_temper_3_value;
+            if (real_temper_3_value < 1000)
+                temper_state_3.Text = (value.ToString() + "℃");
+            else
+                temper_state_3.Text = ("未接入");
+
+
+            if (byteArray[24] == 0)
+                switch_state_4.Text = "关";
+            else
+                switch_state_4.Text = "开";
+
+            int up_threshold_4_value = byteArray[26] * 256 + byteArray[25];
+            int down_threshold_4_value = byteArray[28] * 256 + byteArray[27];
+            int real_temper_4_value = byteArray[30] * 256 + byteArray[29];
+
+            value = (Int16)up_threshold_4_value;
+            up_threshold_4.Text = (value.ToString() + "℃");
+            value = (Int16)down_threshold_4_value;
+            down_threshold_4.Text = (value.ToString() + "℃");
+            value = (Int16)real_temper_4_value;
+            if (real_temper_4_value < 1000)
+                temper_state_4.Text = (value.ToString() + "℃");
+            else
+                temper_state_4.Text = ("未接入");
+
+
+            if (byteArray[31] == 0)
+                switch_state_5.Text = "关";
+            else
+                switch_state_5.Text = "开";
+
+            int up_threshold_5_value = byteArray[33] * 256 + byteArray[32];
+            int down_threshold_5_value = byteArray[35] * 256 + byteArray[34];
+            int real_temper_5_value = byteArray[37] * 256 + byteArray[36];
+
+            value = (Int16)up_threshold_5_value;
+            up_threshold_5.Text = (value.ToString() + "℃");
+            value = (Int16)down_threshold_5_value;
+            down_threshold_5.Text = (value.ToString() + "℃");
+            value = (Int16)real_temper_5_value;
+            if (real_temper_5_value < 1000)
+                temper_state_5.Text = (value.ToString() + "℃");
+            else
+                temper_state_5.Text = ("未接入");
+
+            if (byteArray[38] == 0)
+                switch_state_6.Text = "关";
+            else
+                switch_state_6.Text = "开";
+
+            int up_threshold_6_value = byteArray[40] * 256 + byteArray[39];
+            int down_threshold_6_value = byteArray[42] * 256 + byteArray[41];
+            int real_temper_6_value = byteArray[44] * 256 + byteArray[43];
+
+            value = (Int16)up_threshold_6_value;
+            up_threshold_6.Text = (value.ToString() + "℃");
+            value = (Int16)down_threshold_6_value;
+            down_threshold_6.Text = (value.ToString() + "℃");
+            value = (Int16)real_temper_6_value;
+            if (real_temper_6_value < 1000)
+                temper_state_6.Text = (value.ToString() + "℃");
+            else
+                temper_state_6.Text = ("未接入");
+
+            if (byteArray[45] == 0)
+                switch_state_7.Text = "关";
+            else
+                switch_state_7.Text = "开";
+
+            int up_threshold_7_value = byteArray[47] * 256 + byteArray[46];
+            int down_threshold_7_value = byteArray[49] * 256 + byteArray[48];
+            int real_temper_7_value = byteArray[51] * 256 + byteArray[50];
+
+            value = (Int16)up_threshold_7_value;
+            up_threshold_7.Text = (value.ToString() + "℃");
+            value = (Int16)down_threshold_7_value;
+            down_threshold_7.Text = (value.ToString() + "℃");
+            value = (Int16)real_temper_7_value;
+            if (real_temper_7_value < 1000)
+                temper_state_7.Text = (value.ToString() + "℃");
+            else
+                temper_state_7.Text = ("未接入");
+
+            if (byteArray[52] == 0)
+                switch_state_8.Text = "关";
+            else
+                switch_state_8.Text = "开";
+
+            int up_threshold_8_value = byteArray[54] * 256 + byteArray[53];
+            int down_threshold_8_value = byteArray[56] * 256 + byteArray[55];
+            int real_temper_8_value = byteArray[58] * 256 + byteArray[57];
+
+            value = (Int16)up_threshold_8_value;
+            up_threshold_8.Text = (value.ToString() + "℃");
+            value = (Int16)down_threshold_8_value;
+            down_threshold_8.Text = (value.ToString() + "℃");
+            value = (Int16)real_temper_8_value;
+            if (real_temper_8_value < 1000)
+                temper_state_8.Text = (value.ToString() + "℃");
+            else
+                temper_state_8.Text = ("未接入");
+        }
+
+
         /// <summary>
         /// once has date in. we should show it on the txb.(找到了bug的原因，就是有数据来了之后首先主动去读取了一次数据，然后又通过这个服务去被动读取了一次，所以会出现问题。)
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
-        private void serialPort1_DataReceived(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)
+        ///
+
+
+
+    private void serialPort1_DataReceived(object sender, System.IO.Ports.SerialDataReceivedEventArgs e)
         {
             try
             {
-                string revData = serialPort1.ReadExisting();
-                tbx_show.AppendText(revData);
+                byte[] byte_buff = new byte[1000];
+
+                int i = 0;
+                int len = 0;
+
+                while (true)
+                {
+                    Thread.Sleep(10);
+
+                    len += serialPort1.Read(byte_buff, len, 1);
+
+                    if ( (byte_buff[len-1] == 0x0a) && (byte_buff[len - 2] == 0x0d) )
+                        break;
+
+                    if (i > 300)
+                        break;
+
+                    i++;
+                }
+
+                if (byte_buff[0] == 0xAA)
+                {
+
+                    byte_printf_hex(byte_buff, len);
+
+                    if (byte_buff[2] == 0xF0)
+                    {
+
+                        config_printf(byte_buff);
+
+                    }
+
+                }
+                else
+                {
+
+                    tbx_show.AppendText("非0xAA\r\n");
+
+                    byte_printf_hex(byte_buff, len);
+
+                    string ss = System.Text.Encoding.Default.GetString(byte_buff);
+
+                   // tbx_show.AppendText(ss);
+                }
+
+
             }
             catch
             {
@@ -556,7 +802,6 @@ namespace win_iap_ymodem
                 sendCmd += e.KeyChar.ToString();
             }
         }
-
 
         private byte getPageHead(string text)
         {
@@ -889,7 +1134,19 @@ namespace win_iap_ymodem
 
         private void button1_Click_1(object sender, EventArgs e)
         {
+            // 消息头 0xAA 0x55
+            // 命令字节 02 代表 查询
+            byte[] set_cmd_buff = new byte[3];
 
+            // 消息头 0xAA 0x55
+            set_cmd_buff[0] = 0xAA;
+            set_cmd_buff[1] = 0x55;
+
+            // 命令字节 02 代表 查询
+            set_cmd_buff[2] = 0x02;
+
+            byte_printf_hex(set_cmd_buff, set_cmd_buff.Length);
+            serialPort1.Write(set_cmd_buff, 0, set_cmd_buff.Length);
         }
 
         private void label16_Click(object sender, EventArgs e)
@@ -920,31 +1177,64 @@ namespace win_iap_ymodem
             // 开关状态
             // 上限阈值
             // 下限阈值
-            char[] set_cmd_buff = new char[9];
+            //  0x0D 0x0A
+            byte[] set_cmd_buff = new byte[11];
 
             // 消息头 0xAA 0x55
-            set_cmd_buff[0] = (char)0xAA;
-            set_cmd_buff[1] = (char)0x55;
+            set_cmd_buff[0] = 0xAA;
+            set_cmd_buff[1] = 0x55;
+            set_cmd_buff[9]  = 0x0D;
+            set_cmd_buff[10] = 0x0A;
 
             // 命令字节 01 代表 设置
-            set_cmd_buff[2] = (char)0x01;
+            set_cmd_buff[2] = 0x01;
 
             // 1 通道编号 
-            set_cmd_buff[3] = (char)Convert.ToInt32(channel_number.Text);
+            set_cmd_buff[3] = (byte)Convert.ToInt32(channel_number.Text);
 
             // 开关状态
             if( "开"  == switch_state.Text )
-                set_cmd_buff[3] = (char)0x01;
+                set_cmd_buff[4] = 0x01;
             else
-                set_cmd_buff[3] = (char)0x00;
+                set_cmd_buff[4] = 0x00;
 
-            if (txb_send.Text.Length > 0)
+
+            Int16 up_threshold_value = 0;
+            if(up_threshold.TextLength > 0)
+                 up_threshold_value = Convert.ToInt16(up_threshold.Text);
+            Int16 down_threshold_value = 0;
+            if (down_threshold.TextLength > 0)
+                down_threshold_value = Convert.ToInt16(down_threshold.Text);
+
+            if (( up_threshold_value > -60) && (up_threshold_value < 200 ))
             {
-                serialPort1.Write(txb_send.Text);
-                tbx_show.AppendText(">" + txb_send.Text + "\r\n");
+
+                if ((down_threshold_value > -60) && (down_threshold_value < 200))
+                {
+                    if (up_threshold_value > down_threshold_value )
+                    {
+
+                        set_cmd_buff[6] = (byte)(up_threshold_value >> 8);
+                        set_cmd_buff[5] = (byte)up_threshold_value;
+
+                        set_cmd_buff[8] = (byte)(down_threshold_value >> 8);
+                        set_cmd_buff[7] = (byte)down_threshold_value;
+
+                        byte_printf_hex(set_cmd_buff, set_cmd_buff.Length);
+
+                        serialPort1.Write( set_cmd_buff, 0, set_cmd_buff.Length );
+                    }
+                    else
+                        MessageBox.Show("上限阈值 应该 > 下限阈值");
+
+                }
+                else
+                        MessageBox.Show("下限阈值 不在 -60℃-200℃ 范围内");
             }
             else
-                MessageBox.Show("数据无效，无法发送");
+                MessageBox.Show("上限阈值 不在 -60℃-200℃ 范围内");
+
+
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -953,6 +1243,16 @@ namespace win_iap_ymodem
         }
 
         private void label20_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label18_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void temper_state_6_TextChanged(object sender, EventArgs e)
         {
 
         }
