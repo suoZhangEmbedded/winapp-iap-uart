@@ -59,6 +59,61 @@
             this.cbx_PageSize = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox_progress_value = new System.Windows.Forms.TextBox();
+            this.up_threshold_1 = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
+            this.down_threshold_1 = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.switch_state_1 = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
+            this.temper_state_1 = new System.Windows.Forms.TextBox();
+            this.temper_state_2 = new System.Windows.Forms.TextBox();
+            this.switch_state_2 = new System.Windows.Forms.TextBox();
+            this.down_threshold_2 = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.up_threshold_2 = new System.Windows.Forms.TextBox();
+            this.temper_state_3 = new System.Windows.Forms.TextBox();
+            this.switch_state_3 = new System.Windows.Forms.TextBox();
+            this.down_threshold_3 = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.up_threshold_3 = new System.Windows.Forms.TextBox();
+            this.temper_state_4 = new System.Windows.Forms.TextBox();
+            this.switch_state_4 = new System.Windows.Forms.TextBox();
+            this.down_threshold_4 = new System.Windows.Forms.TextBox();
+            this.label11 = new System.Windows.Forms.Label();
+            this.up_threshold_4 = new System.Windows.Forms.TextBox();
+            this.temper_state_5 = new System.Windows.Forms.TextBox();
+            this.switch_state_5 = new System.Windows.Forms.TextBox();
+            this.down_threshold_5 = new System.Windows.Forms.TextBox();
+            this.label12 = new System.Windows.Forms.Label();
+            this.up_threshold_5 = new System.Windows.Forms.TextBox();
+            this.temper_state_6 = new System.Windows.Forms.TextBox();
+            this.switch_state_6 = new System.Windows.Forms.TextBox();
+            this.down_threshold_6 = new System.Windows.Forms.TextBox();
+            this.label13 = new System.Windows.Forms.Label();
+            this.up_threshold_6 = new System.Windows.Forms.TextBox();
+            this.temper_state_7 = new System.Windows.Forms.TextBox();
+            this.switch_state_7 = new System.Windows.Forms.TextBox();
+            this.down_threshold_7 = new System.Windows.Forms.TextBox();
+            this.label14 = new System.Windows.Forms.Label();
+            this.up_threshold_7 = new System.Windows.Forms.TextBox();
+            this.temper_state_8 = new System.Windows.Forms.TextBox();
+            this.switch_state_8 = new System.Windows.Forms.TextBox();
+            this.down_threshold_8 = new System.Windows.Forms.TextBox();
+            this.label15 = new System.Windows.Forms.Label();
+            this.up_threshold_8 = new System.Windows.Forms.TextBox();
+            this.query_config = new System.Windows.Forms.Button();
+            this.channel_number = new System.Windows.Forms.ComboBox();
+            this.label16 = new System.Windows.Forms.Label();
+            this.label17 = new System.Windows.Forms.Label();
+            this.label18 = new System.Windows.Forms.Label();
+            this.up_threshold = new System.Windows.Forms.TextBox();
+            this.down_threshold = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
+            this.switch_state = new System.Windows.Forms.ComboBox();
+            this.set = new System.Windows.Forms.Button();
+            this.label20 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -257,7 +312,7 @@
             this.btn_Upload.Name = "btn_Upload";
             this.btn_Upload.Size = new System.Drawing.Size(99, 28);
             this.btn_Upload.TabIndex = 13;
-            this.btn_Upload.Text = "读取版本号";
+            this.btn_Upload.Text = "未用到";
             this.btn_Upload.UseVisualStyleBackColor = true;
             this.btn_Upload.Click += new System.EventHandler(this.btn_read_software_version_Click);
             // 
@@ -350,7 +405,8 @@
             // cbx_PageSize
             // 
             this.cbx_PageSize.FormattingEnabled = true;
-            this.cbx_PageSize.Items.AddRange(new object[] {"1024"});
+            this.cbx_PageSize.Items.AddRange(new object[] {
+            "1024"});
             this.cbx_PageSize.Location = new System.Drawing.Point(67, 137);
             this.cbx_PageSize.Name = "cbx_PageSize";
             this.cbx_PageSize.Size = new System.Drawing.Size(98, 20);
@@ -377,12 +433,595 @@
             this.textBox_progress_value.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.textBox_progress_value.TextChanged += new System.EventHandler(this.textBox1_TextChanged_1);
             // 
+            // up_threshold_1
+            // 
+            this.up_threshold_1.BackColor = System.Drawing.SystemColors.Window;
+            this.up_threshold_1.Location = new System.Drawing.Point(994, 133);
+            this.up_threshold_1.Name = "up_threshold_1";
+            this.up_threshold_1.Size = new System.Drawing.Size(51, 21);
+            this.up_threshold_1.TabIndex = 21;
+            this.up_threshold_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(947, 136);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(41, 12);
+            this.label4.TabIndex = 22;
+            this.label4.Text = "通道一";
+            this.label4.Click += new System.EventHandler(this.label4_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(992, 112);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(53, 12);
+            this.label5.TabIndex = 23;
+            this.label5.Text = "上限阈值";
+            this.label5.Click += new System.EventHandler(this.label5_Click);
+            // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(1058, 112);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(53, 12);
+            this.label6.TabIndex = 25;
+            this.label6.Text = "下限阈值";
+            this.label6.Click += new System.EventHandler(this.label6_Click);
+            // 
+            // down_threshold_1
+            // 
+            this.down_threshold_1.BackColor = System.Drawing.SystemColors.Window;
+            this.down_threshold_1.Location = new System.Drawing.Point(1060, 133);
+            this.down_threshold_1.Name = "down_threshold_1";
+            this.down_threshold_1.Size = new System.Drawing.Size(51, 21);
+            this.down_threshold_1.TabIndex = 24;
+            this.down_threshold_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(1128, 112);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(53, 12);
+            this.label7.TabIndex = 27;
+            this.label7.Text = "开关状态";
+            this.label7.Click += new System.EventHandler(this.label7_Click);
+            // 
+            // switch_state_1
+            // 
+            this.switch_state_1.BackColor = System.Drawing.SystemColors.Window;
+            this.switch_state_1.Location = new System.Drawing.Point(1130, 133);
+            this.switch_state_1.Name = "switch_state_1";
+            this.switch_state_1.Size = new System.Drawing.Size(51, 21);
+            this.switch_state_1.TabIndex = 26;
+            this.switch_state_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Location = new System.Drawing.Point(1195, 112);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(53, 12);
+            this.label8.TabIndex = 29;
+            this.label8.Text = "实时温度";
+            this.label8.Click += new System.EventHandler(this.label8_Click);
+            // 
+            // temper_state_1
+            // 
+            this.temper_state_1.BackColor = System.Drawing.SystemColors.Window;
+            this.temper_state_1.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.temper_state_1.Location = new System.Drawing.Point(1197, 133);
+            this.temper_state_1.Name = "temper_state_1";
+            this.temper_state_1.Size = new System.Drawing.Size(51, 21);
+            this.temper_state_1.TabIndex = 28;
+            this.temper_state_1.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.temper_state_1.TextChanged += new System.EventHandler(this.textBox4_TextChanged);
+            // 
+            // temper_state_2
+            // 
+            this.temper_state_2.BackColor = System.Drawing.SystemColors.Window;
+            this.temper_state_2.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.temper_state_2.Location = new System.Drawing.Point(1197, 160);
+            this.temper_state_2.Name = "temper_state_2";
+            this.temper_state_2.Size = new System.Drawing.Size(51, 21);
+            this.temper_state_2.TabIndex = 34;
+            this.temper_state_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // switch_state_2
+            // 
+            this.switch_state_2.BackColor = System.Drawing.SystemColors.Window;
+            this.switch_state_2.Location = new System.Drawing.Point(1130, 160);
+            this.switch_state_2.Name = "switch_state_2";
+            this.switch_state_2.Size = new System.Drawing.Size(51, 21);
+            this.switch_state_2.TabIndex = 33;
+            this.switch_state_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // down_threshold_2
+            // 
+            this.down_threshold_2.BackColor = System.Drawing.SystemColors.Window;
+            this.down_threshold_2.Location = new System.Drawing.Point(1060, 160);
+            this.down_threshold_2.Name = "down_threshold_2";
+            this.down_threshold_2.Size = new System.Drawing.Size(51, 21);
+            this.down_threshold_2.TabIndex = 32;
+            this.down_threshold_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(947, 163);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(41, 12);
+            this.label9.TabIndex = 31;
+            this.label9.Text = "通道二";
+            this.label9.Click += new System.EventHandler(this.label9_Click);
+            // 
+            // up_threshold_2
+            // 
+            this.up_threshold_2.BackColor = System.Drawing.SystemColors.Window;
+            this.up_threshold_2.Location = new System.Drawing.Point(994, 160);
+            this.up_threshold_2.Name = "up_threshold_2";
+            this.up_threshold_2.Size = new System.Drawing.Size(51, 21);
+            this.up_threshold_2.TabIndex = 30;
+            this.up_threshold_2.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // temper_state_3
+            // 
+            this.temper_state_3.BackColor = System.Drawing.SystemColors.Window;
+            this.temper_state_3.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.temper_state_3.Location = new System.Drawing.Point(1197, 187);
+            this.temper_state_3.Name = "temper_state_3";
+            this.temper_state_3.Size = new System.Drawing.Size(51, 21);
+            this.temper_state_3.TabIndex = 39;
+            this.temper_state_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // switch_state_3
+            // 
+            this.switch_state_3.BackColor = System.Drawing.SystemColors.Window;
+            this.switch_state_3.Location = new System.Drawing.Point(1130, 187);
+            this.switch_state_3.Name = "switch_state_3";
+            this.switch_state_3.Size = new System.Drawing.Size(51, 21);
+            this.switch_state_3.TabIndex = 38;
+            this.switch_state_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // down_threshold_3
+            // 
+            this.down_threshold_3.BackColor = System.Drawing.SystemColors.Window;
+            this.down_threshold_3.Location = new System.Drawing.Point(1060, 187);
+            this.down_threshold_3.Name = "down_threshold_3";
+            this.down_threshold_3.Size = new System.Drawing.Size(51, 21);
+            this.down_threshold_3.TabIndex = 37;
+            this.down_threshold_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(947, 190);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(41, 12);
+            this.label10.TabIndex = 36;
+            this.label10.Text = "通道三";
+            // 
+            // up_threshold_3
+            // 
+            this.up_threshold_3.BackColor = System.Drawing.SystemColors.Window;
+            this.up_threshold_3.Location = new System.Drawing.Point(994, 187);
+            this.up_threshold_3.Name = "up_threshold_3";
+            this.up_threshold_3.Size = new System.Drawing.Size(51, 21);
+            this.up_threshold_3.TabIndex = 35;
+            this.up_threshold_3.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // temper_state_4
+            // 
+            this.temper_state_4.BackColor = System.Drawing.SystemColors.Window;
+            this.temper_state_4.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.temper_state_4.Location = new System.Drawing.Point(1197, 214);
+            this.temper_state_4.Name = "temper_state_4";
+            this.temper_state_4.Size = new System.Drawing.Size(51, 21);
+            this.temper_state_4.TabIndex = 44;
+            this.temper_state_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // switch_state_4
+            // 
+            this.switch_state_4.BackColor = System.Drawing.SystemColors.Window;
+            this.switch_state_4.Location = new System.Drawing.Point(1130, 214);
+            this.switch_state_4.Name = "switch_state_4";
+            this.switch_state_4.Size = new System.Drawing.Size(51, 21);
+            this.switch_state_4.TabIndex = 43;
+            this.switch_state_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // down_threshold_4
+            // 
+            this.down_threshold_4.BackColor = System.Drawing.SystemColors.Window;
+            this.down_threshold_4.Location = new System.Drawing.Point(1060, 214);
+            this.down_threshold_4.Name = "down_threshold_4";
+            this.down_threshold_4.Size = new System.Drawing.Size(51, 21);
+            this.down_threshold_4.TabIndex = 42;
+            this.down_threshold_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label11
+            // 
+            this.label11.AutoSize = true;
+            this.label11.Location = new System.Drawing.Point(947, 217);
+            this.label11.Name = "label11";
+            this.label11.Size = new System.Drawing.Size(41, 12);
+            this.label11.TabIndex = 41;
+            this.label11.Text = "通道四";
+            // 
+            // up_threshold_4
+            // 
+            this.up_threshold_4.BackColor = System.Drawing.SystemColors.Window;
+            this.up_threshold_4.Location = new System.Drawing.Point(994, 214);
+            this.up_threshold_4.Name = "up_threshold_4";
+            this.up_threshold_4.Size = new System.Drawing.Size(51, 21);
+            this.up_threshold_4.TabIndex = 40;
+            this.up_threshold_4.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // temper_state_5
+            // 
+            this.temper_state_5.BackColor = System.Drawing.SystemColors.Window;
+            this.temper_state_5.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.temper_state_5.Location = new System.Drawing.Point(1197, 241);
+            this.temper_state_5.Name = "temper_state_5";
+            this.temper_state_5.Size = new System.Drawing.Size(51, 21);
+            this.temper_state_5.TabIndex = 49;
+            this.temper_state_5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // switch_state_5
+            // 
+            this.switch_state_5.BackColor = System.Drawing.SystemColors.Window;
+            this.switch_state_5.Location = new System.Drawing.Point(1130, 241);
+            this.switch_state_5.Name = "switch_state_5";
+            this.switch_state_5.Size = new System.Drawing.Size(51, 21);
+            this.switch_state_5.TabIndex = 48;
+            this.switch_state_5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // down_threshold_5
+            // 
+            this.down_threshold_5.BackColor = System.Drawing.SystemColors.Window;
+            this.down_threshold_5.Location = new System.Drawing.Point(1060, 241);
+            this.down_threshold_5.Name = "down_threshold_5";
+            this.down_threshold_5.Size = new System.Drawing.Size(51, 21);
+            this.down_threshold_5.TabIndex = 47;
+            this.down_threshold_5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label12
+            // 
+            this.label12.AutoSize = true;
+            this.label12.Location = new System.Drawing.Point(947, 244);
+            this.label12.Name = "label12";
+            this.label12.Size = new System.Drawing.Size(41, 12);
+            this.label12.TabIndex = 46;
+            this.label12.Text = "通道五";
+            // 
+            // up_threshold_5
+            // 
+            this.up_threshold_5.BackColor = System.Drawing.SystemColors.Window;
+            this.up_threshold_5.Location = new System.Drawing.Point(994, 241);
+            this.up_threshold_5.Name = "up_threshold_5";
+            this.up_threshold_5.Size = new System.Drawing.Size(51, 21);
+            this.up_threshold_5.TabIndex = 45;
+            this.up_threshold_5.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // temper_state_6
+            // 
+            this.temper_state_6.BackColor = System.Drawing.SystemColors.Window;
+            this.temper_state_6.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.temper_state_6.Location = new System.Drawing.Point(1197, 268);
+            this.temper_state_6.Name = "temper_state_6";
+            this.temper_state_6.Size = new System.Drawing.Size(51, 21);
+            this.temper_state_6.TabIndex = 54;
+            this.temper_state_6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // switch_state_6
+            // 
+            this.switch_state_6.BackColor = System.Drawing.SystemColors.Window;
+            this.switch_state_6.Location = new System.Drawing.Point(1130, 268);
+            this.switch_state_6.Name = "switch_state_6";
+            this.switch_state_6.Size = new System.Drawing.Size(51, 21);
+            this.switch_state_6.TabIndex = 53;
+            this.switch_state_6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // down_threshold_6
+            // 
+            this.down_threshold_6.BackColor = System.Drawing.SystemColors.Window;
+            this.down_threshold_6.Location = new System.Drawing.Point(1060, 268);
+            this.down_threshold_6.Name = "down_threshold_6";
+            this.down_threshold_6.Size = new System.Drawing.Size(51, 21);
+            this.down_threshold_6.TabIndex = 52;
+            this.down_threshold_6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label13
+            // 
+            this.label13.AutoSize = true;
+            this.label13.Location = new System.Drawing.Point(947, 271);
+            this.label13.Name = "label13";
+            this.label13.Size = new System.Drawing.Size(41, 12);
+            this.label13.TabIndex = 51;
+            this.label13.Text = "通道六";
+            // 
+            // up_threshold_6
+            // 
+            this.up_threshold_6.BackColor = System.Drawing.SystemColors.Window;
+            this.up_threshold_6.Location = new System.Drawing.Point(994, 268);
+            this.up_threshold_6.Name = "up_threshold_6";
+            this.up_threshold_6.Size = new System.Drawing.Size(51, 21);
+            this.up_threshold_6.TabIndex = 50;
+            this.up_threshold_6.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // temper_state_7
+            // 
+            this.temper_state_7.BackColor = System.Drawing.SystemColors.Window;
+            this.temper_state_7.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.temper_state_7.Location = new System.Drawing.Point(1197, 295);
+            this.temper_state_7.Name = "temper_state_7";
+            this.temper_state_7.Size = new System.Drawing.Size(51, 21);
+            this.temper_state_7.TabIndex = 59;
+            this.temper_state_7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // switch_state_7
+            // 
+            this.switch_state_7.BackColor = System.Drawing.SystemColors.Window;
+            this.switch_state_7.Location = new System.Drawing.Point(1130, 295);
+            this.switch_state_7.Name = "switch_state_7";
+            this.switch_state_7.Size = new System.Drawing.Size(51, 21);
+            this.switch_state_7.TabIndex = 58;
+            this.switch_state_7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // down_threshold_7
+            // 
+            this.down_threshold_7.BackColor = System.Drawing.SystemColors.Window;
+            this.down_threshold_7.Location = new System.Drawing.Point(1060, 295);
+            this.down_threshold_7.Name = "down_threshold_7";
+            this.down_threshold_7.Size = new System.Drawing.Size(51, 21);
+            this.down_threshold_7.TabIndex = 57;
+            this.down_threshold_7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label14
+            // 
+            this.label14.AutoSize = true;
+            this.label14.Location = new System.Drawing.Point(947, 298);
+            this.label14.Name = "label14";
+            this.label14.Size = new System.Drawing.Size(41, 12);
+            this.label14.TabIndex = 56;
+            this.label14.Text = "通道七";
+            // 
+            // up_threshold_7
+            // 
+            this.up_threshold_7.BackColor = System.Drawing.SystemColors.Window;
+            this.up_threshold_7.Location = new System.Drawing.Point(994, 295);
+            this.up_threshold_7.Name = "up_threshold_7";
+            this.up_threshold_7.Size = new System.Drawing.Size(51, 21);
+            this.up_threshold_7.TabIndex = 55;
+            this.up_threshold_7.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // temper_state_8
+            // 
+            this.temper_state_8.BackColor = System.Drawing.SystemColors.Window;
+            this.temper_state_8.ForeColor = System.Drawing.SystemColors.ActiveCaption;
+            this.temper_state_8.Location = new System.Drawing.Point(1197, 322);
+            this.temper_state_8.Name = "temper_state_8";
+            this.temper_state_8.Size = new System.Drawing.Size(51, 21);
+            this.temper_state_8.TabIndex = 64;
+            this.temper_state_8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // switch_state_8
+            // 
+            this.switch_state_8.BackColor = System.Drawing.SystemColors.Window;
+            this.switch_state_8.Location = new System.Drawing.Point(1130, 322);
+            this.switch_state_8.Name = "switch_state_8";
+            this.switch_state_8.Size = new System.Drawing.Size(51, 21);
+            this.switch_state_8.TabIndex = 63;
+            this.switch_state_8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // down_threshold_8
+            // 
+            this.down_threshold_8.BackColor = System.Drawing.SystemColors.Window;
+            this.down_threshold_8.Location = new System.Drawing.Point(1060, 322);
+            this.down_threshold_8.Name = "down_threshold_8";
+            this.down_threshold_8.Size = new System.Drawing.Size(51, 21);
+            this.down_threshold_8.TabIndex = 62;
+            this.down_threshold_8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label15
+            // 
+            this.label15.AutoSize = true;
+            this.label15.Location = new System.Drawing.Point(947, 325);
+            this.label15.Name = "label15";
+            this.label15.Size = new System.Drawing.Size(41, 12);
+            this.label15.TabIndex = 61;
+            this.label15.Text = "通道八";
+            // 
+            // up_threshold_8
+            // 
+            this.up_threshold_8.BackColor = System.Drawing.SystemColors.Window;
+            this.up_threshold_8.Location = new System.Drawing.Point(994, 322);
+            this.up_threshold_8.Name = "up_threshold_8";
+            this.up_threshold_8.Size = new System.Drawing.Size(51, 21);
+            this.up_threshold_8.TabIndex = 60;
+            this.up_threshold_8.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // query_config
+            // 
+            this.query_config.Location = new System.Drawing.Point(994, 349);
+            this.query_config.Name = "query_config";
+            this.query_config.Size = new System.Drawing.Size(254, 28);
+            this.query_config.TabIndex = 65;
+            this.query_config.Text = "查询配置";
+            this.query_config.UseVisualStyleBackColor = true;
+            this.query_config.Click += new System.EventHandler(this.button1_Click_1);
+            // 
+            // channel_number
+            // 
+            this.channel_number.FormattingEnabled = true;
+            this.channel_number.Items.AddRange(new object[] {
+            "1",
+            "2",
+            "3",
+            "4",
+            "5",
+            "6",
+            "7",
+            "8"});
+            this.channel_number.Location = new System.Drawing.Point(984, 71);
+            this.channel_number.Name = "channel_number";
+            this.channel_number.Size = new System.Drawing.Size(51, 20);
+            this.channel_number.TabIndex = 66;
+            this.channel_number.SelectedIndexChanged += new System.EventHandler(this.comboBox1_SelectedIndexChanged);
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Location = new System.Drawing.Point(982, 49);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(53, 12);
+            this.label16.TabIndex = 67;
+            this.label16.Text = "通道编号";
+            this.label16.Click += new System.EventHandler(this.label16_Click);
+            // 
+            // label17
+            // 
+            this.label17.AutoSize = true;
+            this.label17.Location = new System.Drawing.Point(1039, 49);
+            this.label17.Name = "label17";
+            this.label17.Size = new System.Drawing.Size(53, 12);
+            this.label17.TabIndex = 69;
+            this.label17.Text = "上限阈值";
+            this.label17.Click += new System.EventHandler(this.label17_Click);
+            // 
+            // label18
+            // 
+            this.label18.AutoSize = true;
+            this.label18.Location = new System.Drawing.Point(1096, 49);
+            this.label18.Name = "label18";
+            this.label18.Size = new System.Drawing.Size(53, 12);
+            this.label18.TabIndex = 71;
+            this.label18.Text = "下限阈值";
+            // 
+            // up_threshold
+            // 
+            this.up_threshold.BackColor = System.Drawing.SystemColors.Window;
+            this.up_threshold.Location = new System.Drawing.Point(1041, 70);
+            this.up_threshold.Name = "up_threshold";
+            this.up_threshold.Size = new System.Drawing.Size(51, 21);
+            this.up_threshold.TabIndex = 72;
+            this.up_threshold.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // down_threshold
+            // 
+            this.down_threshold.BackColor = System.Drawing.SystemColors.Window;
+            this.down_threshold.Location = new System.Drawing.Point(1098, 70);
+            this.down_threshold.Name = "down_threshold";
+            this.down_threshold.Size = new System.Drawing.Size(51, 21);
+            this.down_threshold.TabIndex = 73;
+            this.down_threshold.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Location = new System.Drawing.Point(1153, 49);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(53, 12);
+            this.label19.TabIndex = 75;
+            this.label19.Text = "开关状态";
+            this.label19.Click += new System.EventHandler(this.label19_Click);
+            // 
+            // switch_state
+            // 
+            this.switch_state.FormattingEnabled = true;
+            this.switch_state.Items.AddRange(new object[] {
+            "开",
+            "关",});
+            this.switch_state.Location = new System.Drawing.Point(1155, 71);
+            this.switch_state.Name = "switch_state";
+            this.switch_state.Size = new System.Drawing.Size(51, 20);
+            this.switch_state.TabIndex = 74;
+            this.switch_state.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            // 
+            // set
+            // 
+            this.set.Location = new System.Drawing.Point(1212, 65);
+            this.set.Name = "set";
+            this.set.Size = new System.Drawing.Size(60, 28);
+            this.set.TabIndex = 76;
+            this.set.Text = "设置";
+            this.set.UseVisualStyleBackColor = true;
+            this.set.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Location = new System.Drawing.Point(930, 74);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(53, 12);
+            this.label20.TabIndex = 77;
+            this.label20.Text = "参数配置";
+            this.label20.Click += new System.EventHandler(this.label20_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 12F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlLightLight;
-            this.ClientSize = new System.Drawing.Size(923, 416);
+            this.ClientSize = new System.Drawing.Size(1306, 416);
+            this.Controls.Add(this.label20);
+            this.Controls.Add(this.set);
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.switch_state);
+            this.Controls.Add(this.down_threshold);
+            this.Controls.Add(this.up_threshold);
+            this.Controls.Add(this.label18);
+            this.Controls.Add(this.label17);
+            this.Controls.Add(this.label16);
+            this.Controls.Add(this.channel_number);
+            this.Controls.Add(this.query_config);
+            this.Controls.Add(this.temper_state_8);
+            this.Controls.Add(this.switch_state_8);
+            this.Controls.Add(this.down_threshold_8);
+            this.Controls.Add(this.label15);
+            this.Controls.Add(this.up_threshold_8);
+            this.Controls.Add(this.temper_state_7);
+            this.Controls.Add(this.switch_state_7);
+            this.Controls.Add(this.down_threshold_7);
+            this.Controls.Add(this.label14);
+            this.Controls.Add(this.up_threshold_7);
+            this.Controls.Add(this.temper_state_6);
+            this.Controls.Add(this.switch_state_6);
+            this.Controls.Add(this.down_threshold_6);
+            this.Controls.Add(this.label13);
+            this.Controls.Add(this.up_threshold_6);
+            this.Controls.Add(this.temper_state_5);
+            this.Controls.Add(this.switch_state_5);
+            this.Controls.Add(this.down_threshold_5);
+            this.Controls.Add(this.label12);
+            this.Controls.Add(this.up_threshold_5);
+            this.Controls.Add(this.temper_state_4);
+            this.Controls.Add(this.switch_state_4);
+            this.Controls.Add(this.down_threshold_4);
+            this.Controls.Add(this.label11);
+            this.Controls.Add(this.up_threshold_4);
+            this.Controls.Add(this.temper_state_3);
+            this.Controls.Add(this.switch_state_3);
+            this.Controls.Add(this.down_threshold_3);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.up_threshold_3);
+            this.Controls.Add(this.temper_state_2);
+            this.Controls.Add(this.switch_state_2);
+            this.Controls.Add(this.down_threshold_2);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.up_threshold_2);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.temper_state_1);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.switch_state_1);
+            this.Controls.Add(this.label6);
+            this.Controls.Add(this.down_threshold_1);
+            this.Controls.Add(this.label5);
+            this.Controls.Add(this.label4);
+            this.Controls.Add(this.up_threshold_1);
             this.Controls.Add(this.textBox_progress_value);
             this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.btn_run_bootloader);
@@ -395,7 +1034,7 @@
             this.Controls.Add(this.progressBar1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "Form1";
-            this.Text = "STM32-IAP上位机操作工具";
+            this.Text = "温度检测设备参数配置工具";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
@@ -440,6 +1079,61 @@
         private System.Windows.Forms.TextBox text_file_crc32;
         private System.Windows.Forms.TextBox text_file_len;
         private System.Windows.Forms.TextBox textBox_progress_value;
+        private System.Windows.Forms.TextBox up_threshold_1;
+        private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox down_threshold_1;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.TextBox switch_state_1;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.TextBox temper_state_1;
+        private System.Windows.Forms.TextBox temper_state_2;
+        private System.Windows.Forms.TextBox switch_state_2;
+        private System.Windows.Forms.TextBox down_threshold_2;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox up_threshold_2;
+        private System.Windows.Forms.TextBox temper_state_3;
+        private System.Windows.Forms.TextBox switch_state_3;
+        private System.Windows.Forms.TextBox down_threshold_3;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.TextBox up_threshold_3;
+        private System.Windows.Forms.TextBox temper_state_4;
+        private System.Windows.Forms.TextBox switch_state_4;
+        private System.Windows.Forms.TextBox down_threshold_4;
+        private System.Windows.Forms.Label label11;
+        private System.Windows.Forms.TextBox up_threshold_4;
+        private System.Windows.Forms.TextBox temper_state_5;
+        private System.Windows.Forms.TextBox switch_state_5;
+        private System.Windows.Forms.TextBox down_threshold_5;
+        private System.Windows.Forms.Label label12;
+        private System.Windows.Forms.TextBox up_threshold_5;
+        private System.Windows.Forms.TextBox temper_state_6;
+        private System.Windows.Forms.TextBox switch_state_6;
+        private System.Windows.Forms.TextBox down_threshold_6;
+        private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.TextBox up_threshold_6;
+        private System.Windows.Forms.TextBox temper_state_7;
+        private System.Windows.Forms.TextBox switch_state_7;
+        private System.Windows.Forms.TextBox down_threshold_7;
+        private System.Windows.Forms.Label label14;
+        private System.Windows.Forms.TextBox up_threshold_7;
+        private System.Windows.Forms.TextBox temper_state_8;
+        private System.Windows.Forms.TextBox switch_state_8;
+        private System.Windows.Forms.TextBox down_threshold_8;
+        private System.Windows.Forms.Label label15;
+        private System.Windows.Forms.TextBox up_threshold_8;
+        private System.Windows.Forms.Button query_config;
+        private System.Windows.Forms.ComboBox channel_number;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.Label label17;
+        private System.Windows.Forms.Label label18;
+        private System.Windows.Forms.TextBox up_threshold;
+        private System.Windows.Forms.TextBox down_threshold;
+        private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.ComboBox switch_state;
+        private System.Windows.Forms.Button set;
+        private System.Windows.Forms.Label label20;
     }
 }
 

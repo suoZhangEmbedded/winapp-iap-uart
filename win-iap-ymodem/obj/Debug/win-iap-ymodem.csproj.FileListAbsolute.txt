@@ -22,3 +22,11 @@ C:\Users\suozhang\Desktop\winapp-iap-uart\win-iap-ymodem\obj\Debug\win_iap_ymode
 C:\Users\suozhang\Desktop\winapp-iap-uart\win-iap-ymodem\obj\Debug\win-iap-ymodem.csproj.GenerateResource.cache
 C:\Users\suozhang\Desktop\winapp-iap-uart\win-iap-ymodem\obj\Debug\win-iap-ymodem.exe
 C:\Users\suozhang\Desktop\winapp-iap-uart\win-iap-ymodem\obj\Debug\win-iap-ymodem.pdb
+D:\project\winapp-iap-uart\win-iap-ymodem\bin\Debug\win-iap-ymodem.exe
+D:\project\winapp-iap-uart\win-iap-ymodem\bin\Debug\win-iap-ymodem.pdb
+D:\project\winapp-iap-uart\win-iap-ymodem\obj\Debug\win-iap-ymodem.csprojAssemblyReference.cache
+D:\project\winapp-iap-uart\win-iap-ymodem\obj\Debug\win_iap_ymodem.Form1.resources
+D:\project\winapp-iap-uart\win-iap-ymodem\obj\Debug\win_iap_ymodem.Properties.Resources.resources
+D:\project\winapp-iap-uart\win-iap-ymodem\obj\Debug\win-iap-ymodem.csproj.GenerateResource.cache
+D:\project\winapp-iap-uart\win-iap-ymodem\obj\Debug\win-iap-ymodem.exe
+D:\project\winapp-iap-uart\win-iap-ymodem\obj\Debug\win-iap-ymodem.pdb

@@ -132,10 +132,14 @@ namespace win_iap_ymodem
             EnumComportfromReg(cbx_Port);
             serialPort1.Encoding = Encoding.GetEncoding("gb2312");//串口接收编码GB2312码
             System.Windows.Forms.Control.CheckForIllegalCrossThreadCalls = false;//忽略程序跨越线程运行导致的错误.没有此句将会产生错误
+            
+            // 初始化 下拉选项值
             cbx_Baud.SelectedIndex = 13;
             cbx_PageSize.SelectedIndex = 0;
+            channel_number.SelectedIndex = 0;
+            switch_state.SelectedIndex = 0;
 
-            tbx_show.AppendText("注意：打开串口和打开升级文件后，按钮才可使用。\r\n");
+            tbx_show.AppendText("注意：打开串口和打开升级文件后，相关按钮才可使用。\r\n");
             textBox_progress_value.Text = "%0";
 
         }
@@ -152,6 +156,8 @@ namespace win_iap_ymodem
             btn_run_bootloader.Enabled = true;
             btn_RunApp.Enabled = true;
             btn_send.Enabled = true;
+            set.Enabled = true;
+            query_config.Enabled = true;
         }
 
 
@@ -167,7 +173,8 @@ namespace win_iap_ymodem
             btn_RunApp.Enabled = false;
             btn_send.Enabled = false;
             btn_Erase.Enabled = false;
-
+            set.Enabled = false;
+            query_config.Enabled = false;
         }
 
 
@@ -836,6 +843,116 @@ namespace win_iap_ymodem
         }
 
         private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label7_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label8_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void textBox4_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label9_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label16_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label17_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label19_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button2_Click(object sender, EventArgs e)
+        {
+            // 消息头 0xAA 0x55
+            // 命令字节 01 代表 设置
+            // 通道编号 
+            // 开关状态
+            // 上限阈值
+            // 下限阈值
+            char[] set_cmd_buff = new char[9];
+
+            // 消息头 0xAA 0x55
+            set_cmd_buff[0] = (char)0xAA;
+            set_cmd_buff[1] = (char)0x55;
+
+            // 命令字节 01 代表 设置
+            set_cmd_buff[2] = (char)0x01;
+
+            // 1 通道编号 
+            set_cmd_buff[3] = (char)Convert.ToInt32(channel_number.Text);
+
+            // 开关状态
+            if( "开"  == switch_state.Text )
+                set_cmd_buff[3] = (char)0x01;
+            else
+                set_cmd_buff[3] = (char)0x00;
+
+            if (txb_send.Text.Length > 0)
+            {
+                serialPort1.Write(txb_send.Text);
+                tbx_show.AppendText(">" + txb_send.Text + "\r\n");
+            }
+            else
+                MessageBox.Show("数据无效，无法发送");
+        }
+
+        private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label20_Click(object sender, EventArgs e)
         {
 
         }
